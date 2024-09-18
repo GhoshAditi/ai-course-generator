@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
+import { Inter,Outfit } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import { ClerkProvider , GoogleOneTap} from "@clerk/nextjs";
+
+const inter = Outfit({subsets: ['latin']});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,12 +28,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider>
     <html lang="en">
+      <GoogleOneTap/>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
     </html>
+    </ClerkProvider>
   );
 }
