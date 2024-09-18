@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter,Outfit } from "next/font/google";
+import { Outfit } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ClerkProvider , GoogleOneTap} from "@clerk/nextjs";
